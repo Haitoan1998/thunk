@@ -1,0 +1,21 @@
+là 1 thư viện quản lý trạng thái của , quản lý trạng thái toàn cầu của ứng dụng
+cách hoạt động redux
+nó có 1 store lưu trữ toàn bộ state của app, mỗi component có thể access trực tiếp
+ đến state được lưu trữ thay vì phải send drop down props từ compenent này đến component khác
+
+1.Actions đơn giản là các events, là cách mà ta send data từ app đến redux store,có thể 
+là từ sự tương tác giữa user với app,API calls hoặc có thể là từ form submission
+- được gửi bằng cách sử dụng store.dispatch() methos, chúng phải có 1 type property để biểu
+lộ loại action để thực hiện, chúng cũng phải có  1 payload chứa thông tin
+
+2.Reducer: Là một hàm xử lý nhận vào trạng thái hiện tại và action, sau đó trả về trạng thái mới
+. Reducer chỉ nên thực hiện các thay đổi không gây biến đổi trạng thái hiện tại, mà trả về một 
+trạng thái mới dựa trên action.
+
+3.Store: Là nơi lưu trữ trạng thái toàn cục của ứng dụng. Nó là một đối tượng chứa reducer và hỗ 
+trợ các phương thức để lấy trạng thái hiện tại, gửi action và đăng ký lắng nghe thay đổi trạng thái.
+
+B.mỗi redux cần tạo 1 store , với những bước như sau
+1-import hoặc tạo hàm reducer
+2-thiết lập phần mềm trung gian xử lý logic không đồng bộ
+3-định cấu hình Redux DevTools Extension
